@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/user-attachments/assets/83387a1b-35c6-4c88-be82-8443f8fc1aa0" alt="activedir-logo"/>
+<img src="https://github.com/user-attachments/assets/090ca439-9a93-458d-9b6f-a7416997ff8c" alt="activedir-logo"/>
 </p>
 
 
@@ -49,7 +49,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
  - **DNS** stands for **Domain Name System**.
  - The primary function of **DNS** is to resolve/translate **human-readable domain names** into **machine-readable IP addresses**, which enables users to access websites and their resources.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/d0b57cbd-9631-4ffe-9c38-812747fa5d15" alt="howdnsworksgeneral"/>
+<img width="1200" src="https://github.com/user-attachments/assets/ac3043b3-bf97-44e6-828a-a74f7a8f7cc7" alt="howdnsworksgeneral"/>
 </p>
 <p>
 <br />
@@ -58,7 +58,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
   - A-records resolve domain names to IPv4 addresses, which are 32 bit numerical addresses.
   - When a user types in a domain name, like `google.com`, into a web browser, DNS uses an A record to resolve the domain name, like `google.com`, to an IP address.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/d9b56fd1-3f96-4373-8d8c-934ef9103847" alt="howdnsworks-arecords"/>
+<img width="1200" src="https://github.com/user-attachments/assets/9849e3ac-6a12-433a-87eb-70de63446663" alt="howdnsworks-arecords"/>
 </p>
 <p>
 <br />
@@ -70,7 +70,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
    - If a client computer contains no A-record in its **local DNS cache**, it resorts to trying to find a given A-record in its **local Host file** which is stored on in long-term memory on its hard drive. This is much less efficient than finding it in its **local DNS cache**.
    - If it can't find the A-record in the **local Host File**, the client computer must perform a DNS lookup with its **DNS server**, which is the least efficient way to acquire an A-record.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/0696b159-f35d-4aad-ad4e-8ca65b25366c" alt="howdnsworks-localcache2"/>
+<img width="1200" src="https://github.com/user-attachments/assets/e9faac68-9545-4ece-b8e3-1bb72ca16684" alt="howdnsworks-localcache2"/>
 </p>
 <p>
 <br />
@@ -78,14 +78,14 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
   - A **CNAME (Canonical Name) record** is a DNS record that is similar to an A-record.
   - Whereas A-records resolve domain names to IP addresses, **CNAME records** resolve domain names to domain names via aliases.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/a20cde38-0a25-4b11-9b4d-59c13425a24b" alt="howdnsworks-cnamerecords"/>
+<img width="1200" src="https://github.com/user-attachments/assets/fb9518cc-b2c7-4595-8a7d-4241d0c78444" alt="howdnsworks-cnamerecords"/>
 </p>
 <p>
 <br />
 
  - A hands-on way to gain deeper insight into how DNS works is to deploy two Azure Virtual Machines (a client and an Active Directory domain controller) and observe how A-records, local DNS cache, and CNAME records function between them.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/3cc4362b-02ac-41ea-b83b-31e7ddcffbdf" alt="howdnsworks-arecords-1"/>
+<img width="1200" src="https://github.com/user-attachments/assets/08e1ae1c-48be-47c6-99ca-e2bb9beeb24e" alt="howdnsworks-arecords-1"/>
 </p>
 <p>
 <br />
@@ -97,7 +97,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
  - Log-in to `dc-1` as `jane_admin` by entering `mydomain.com\jane_admin` for **Username** and the corresponding password.
  - Click **Continue**.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/760f45fe-54f4-4b24-a91a-a62237a1ed13" alt="rdpasdomadminindc1"/>
+<img width="1200" src="https://github.com/user-attachments/assets/6824ae94-dd69-41ac-a58f-b6c764727f0b" alt="rdpasdomadminindc1"/>
 </p>
 <p>
 <br /> 
@@ -107,14 +107,14 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
    - Double-click the **Client-1 VM** tile, enter `mydomain.com\jane_admin` for **Username**, and the corresponding password for **Password**.
    - Click **Continue**.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/01abeb40-3304-4c73-8e01-eb00dad6eb7f" alt="rdpasjaneadminclientvm"/>
+<img width="1200" src="https://github.com/user-attachments/assets/70eb54d1-9c57-42a0-a54a-be9ce751504c" alt="rdpasjaneadminclientvm"/>
 </p>
 <p>
 <br />
 
 - On **Client-1**, open **PowerShell** as **administrator** and attempt to `ping` **"mainframe"**.
 - Observe what happens when it fails: a message is returned that reads, `Ping request could not find host mainframe. Please check the name and try again.`
-<img width="1200" src="https://github.com/user-attachments/assets/d4522435-ed33-4d37-a85b-c4458330f6ef" alt="client1pingsmainframe1"/>
+<img width="1200" src="https://github.com/user-attachments/assets/d4d0070c-c64c-43ed-9f47-c0d465a44e35" alt="client1pingsmainframe1"/>
 </p>
 <p>
 <br />
@@ -126,7 +126,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
  - When **Client-1** fails to find a `mainframe` record in its **host file**, it then checks its **DNS Server**, which, in this case, is the **dc-1 VM**, the **Domain Controller**.
    - This is the slowest method **Client-1** can access an A-record for hostname, `mainframe`.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/bf2893d3-d28d-422b-9a1d-fbc40e68fb35" alt="howdnsworks-arecords-1"/>
+<img width="1200" src="https://github.com/user-attachments/assets/68b7efa9-ab24-4e52-bc9c-1ad681c3003c" alt="howdnsworks-arecords-1"/>
 </p>
 <p>
 <br />
@@ -134,7 +134,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
 - To simulate **Client-1** first checking its local DNS cache for `mainframe's` A-record, open **PowerShell** as **administrator** from **Client-1** and run `ipconfig /displaydns`.
 - A long list of DNS records is then printed out, which **Client-1** has in its local DNS cache.
 - However, there are no records for hostname, `mainframe`.
-<img width="1200" src="https://github.com/user-attachments/assets/6abbf800-993e-4381-9a92-197d22320a1a" alt="ipconfigdisplaydns"/>
+<img width="1200" src="https://github.com/user-attachments/assets/3695255b-94a9-4cb7-893c-11ea99b2b744" alt="ipconfigdisplaydns"/>
 </p>
 <p>
 <br />
@@ -144,7 +144,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
 - Double-click `hosts`, which is **Client-1's** local host file, and open it with **Notepad**.
   - The local host file is where **Client-1** stores specific IP address-to-hostname mappings.
   - In this case, there is not a mapping for `mainframe` in **Client-1's** host file.
-<img width="1200" src="https://github.com/user-attachments/assets/137c4293-8561-4558-9acf-2f09c07206ae" alt="client1localhostfile"/>
+<img width="1200" src="https://github.com/user-attachments/assets/50d46d80-0e33-4d9f-a0ca-b1e0d973170f" alt="client1localhostfile"/>
 </p>
 <p>
 <br />
@@ -154,7 +154,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
   - It returns the hostname `dc-1.internal.cloudapp.net` and Private IP address `10.0.0.4` of the **DNS Server** that **Client-1** is querying.
   - It also returns a message that `dc-1.internal.cloudapp.net can't find mainframe: Non-existent domain`.
   - The **DNS Server** is responding to **Client-1's** query for `mainframe`, explaining that it shows no records for `mainframe`.
-<img width="1200" src="https://github.com/user-attachments/assets/1284c1d0-c738-4564-84f4-1ab72587e6a6" alt="nslookupmainframe"/>
+<img width="1200" src="https://github.com/user-attachments/assets/7d19d3b6-d8fd-41aa-b7b1-4ef5f4420c33" alt="nslookupmainframe"/>
 </p>
 <p>
 <br />
@@ -163,14 +163,14 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
 - Then the DNS A-record for `mainframe` on the domain controller needs to be configured to point to the domain controller's **Private IP address**.
   - On the **Domain Controller VM** (dc-1), click the **Start** menu in the bottom left, click **Windows Administrative Tools**, then click **DNS** to open **DNS Manager**.
   - On the left, click `dc-1` to expand it, then navigate to **Forward Lookup Zones > mydomain.com**.
-<img width="1200" src="https://github.com/user-attachments/assets/fe6fd228-36a1-4938-9dc6-b5d0f68c77b6" alt="dnsmanagerfilepath"/>
+<img width="1200" src="https://github.com/user-attachments/assets/d5ba9a9d-820f-40e8-a77b-5c7f704486b8" alt="dnsmanagerfilepath"/>
 </p>
 <p>
 <br />
 
  - Right-click anywhere in the blank space on the right and select **New Host (A or AAA)**.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/43c4d02e-bd59-4b8b-a374-7ca237843697" alt="newhostaoraaa"/>
+<img width="1200" src="https://github.com/user-attachments/assets/ea431792-bb58-46bc-8d20-b773418cd22d" alt="newhostaoraaa"/>
 </p>
 <p>
 <br />
@@ -182,14 +182,14 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
  - When the **PTR record** message displays click **OK**.
  - Then click **Done** and click **Refresh** at the top of the **DNS Manager** menu.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/ebd4bff5-9fe3-4fe9-abab-cf197bfec0d0" alt="addnewarecordfornewhost"/>
+<img width="1200" src="https://github.com/user-attachments/assets/5eba2f19-1ccf-45c6-88ca-5ae6820d3fe8" alt="addnewarecordfornewhost"/>
 </p>
 <p>
 <br />
 
  - Notice the newly created **A record** for `mainframe`, which points to the **Private IP address** of the domain controller (10.0.0.4) in the **DNS Manager**.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/3099e78d-1ab4-4cf6-975e-e8c5e4364a19" alt="mainframehostarecordcreated"/>
+<img width="1200" src="https://github.com/user-attachments/assets/7af50bdf-90a3-4ca8-b5fd-ed2c1899f8e6" alt="mainframehostarecordcreated"/>
 </p>
 <p>
 <br />
@@ -197,7 +197,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
 - Now that the domain controller contains an A-record for `mainframe`, attempt to `ping` "mainframe" again from **Client-1**:
   - Back on **Client-1** run **PowerShell** as **administrator** and run `ping mainframe`.
   - Notice that it matches `mainframe` to 10.0.0.4 and then a `ping` replies are returned.
-<img width="1200" src="https://github.com/user-attachments/assets/fbc6fbb4-a80d-4fe7-9d81-ad15c1dd453a" alt="client1succeedsinpingingmainframe"/>
+<img width="1200" src="https://github.com/user-attachments/assets/0feaa451-ac10-4a8e-80ec-3010078a8d34" alt="client1succeedsinpingingmainframe"/>
 </p>
 <p>
 <br />
@@ -207,7 +207,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
    - However, when **Client-1** checks its **DNS Server**, the DNS Server on the domain controller finds the A-record that was created for `mainframe`.
    - The DNS server then replies to **Client-1's** `ping` with the IP address of `mainframe`.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/851e27b5-3570-4534-8608-22e7f057bac0" alt="howdnsworks-arecords-2"/>
+<img width="1200" src="https://github.com/user-attachments/assets/fbc335cf-0f4b-4fd5-8f1c-c0ac91454d9c" alt="howdnsworks-arecords-2"/>
 </p>
 <p>
 <br />
@@ -220,7 +220,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
  - In the **mainframe Properties** menu, on the **Host (A)** tab, change **IP address** to the public DNS server for `www.google.com`, `8.8.8.8`.
  - Then click **Apply**, **OK**, and **OK**.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/9bfa94e9-a770-4311-b29a-cee3a69278a2" alt="changemainframednstogoogle"/>
+<img width="1200" src="https://github.com/user-attachments/assets/c32f42aa-27b5-4b17-997a-cf931cc90c38" alt="changemainframednstogoogle"/>
 </p>
 <p>
 <br />
@@ -229,14 +229,14 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
  - Attempt to **ping** "mainframe" by issuing the following command: `ping mainframe`.
  - Observe how the `ping` replies are returned from `10.0.0.4` immediately after changing the IP address of "mainframe's" DNS A-record to `8.8.8.8`.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/94c78708-1f05-4604-ae91-01b7c75d1f09" alt="pingmainframerepliesolddns"/>
+<img width="1200" src="https://github.com/user-attachments/assets/3d0acd85-636e-496a-ba02-e9d2cbae4f27" alt="pingmainframerepliesolddns"/>
 </p>
 <p>
 <br />
 
  - To observe the current local DNS cache on **Client-1**, execute `ipconfig /displaydns` in **PowerShell** as **administrator**.
  - Scroll down to the `mainframe` entry in the output and observe that the IP address for the (A) Host Record of `mainframe` reads `10.0.0.4` in **Client-1's** local DNS cache.
-<img width="1200" src="https://github.com/user-attachments/assets/889ddaff-3202-4b01-828d-933943d751b0" alt="displaydnsolddnscache"/>
+<img width="1200" src="https://github.com/user-attachments/assets/fa9eaa82-757a-41c6-ac81-f49710a04973" alt="displaydnsolddnscache"/>
 </p>
 <p>
 <br />
@@ -247,7 +247,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
  - While the **Domain Controller DNS server** has a current A-record entry for "mainframe" with an IP address of `8.8.8.8`, the DNS cache shows an A-record for "mainframe" with an IP address of `10.0.0.4`.
  - There is a mismatch between the DNS IP addresses on **Client-1's** and the **Domain Controller's** for "mainframe".
  - As such, when **Client-1** attempts to `ping` "mainframe" after its A-record has been changed on the **Domain Controller**, **Client-1** receives replies with the old IP address for "mainframe".
-<img width="1200" src="https://github.com/user-attachments/assets/bbb090b8-7b4c-484a-8a81-49bf4075c71d" alt="howdnsworks-dnscache1"/>
+<img width="1200" src="https://github.com/user-attachments/assets/62075199-f64f-41b5-88d5-c310911a7348" alt="howdnsworks-dnscache1"/>
 </p>
 <p>
 <br />
@@ -255,13 +255,13 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
  - To force **Client-1** to acquire the updated A-record for "mainframe, **Client-1's** local DNS cache needs to be flushed.
    - To flush the local DNS cache on **Client-1**, run `ipconfig /flushdns` in **PowerShell** as **administrator**.
    - Notice the output of the command: `Windows IP Configuration Successfully flushed the DNS Resolver Cache.`
-<img width="1200" src="https://github.com/user-attachments/assets/23bb01f4-81e8-428d-b44e-df64c72d3420" alt="flushclient1dnscache"/>
+<img width="1200" src="https://github.com/user-attachments/assets/f8b19232-d2ad-4503-ac3a-075d36fa33ac" alt="flushclient1dnscache"/>
 </p>
 <p>
 <br />
 
   - Verify that the local DNS cache has in fact been flushed on **Client-1** by running `ipconfig /displaydns` in **PowerShell** as **administrator**.
-   <img width="1200" src="https://github.com/user-attachments/assets/26eff423-9a45-4692-92e2-3e7e20e69add" alt="displaydnsafterflush"/>
+   <img width="1200" src="https://github.com/user-attachments/assets/544b2c4f-5de9-448e-b8f9-27118914ebfc" alt="displaydnsafterflush"/>
 </p>
 <p>
 <br />
@@ -563,7 +563,7 @@ Notice how there is no longer an entry for "mainframe" in the local DNS cache:
 
  - Next, attempt to `ping` "mainframe" from **Client-1** again.
  - Notice that the address of the new A-record in the replies is now `8.8.8.8`, the public DNS server for [www.google.com](www.google.com).
-<img width="1200" src="https://github.com/user-attachments/assets/af3bb026-7b8a-4a68-a583-81bc6f3d2170" alt="pingmainframe2google"/>
+<img width="1200" src="https://github.com/user-attachments/assets/60801e66-d1a6-4105-a954-0994fb3e8cd7" alt="pingmainframe2google"/>
 </p>
 <p>
 <br />
@@ -573,7 +573,7 @@ Notice how there is no longer an entry for "mainframe" in the local DNS cache:
  - Next, **Client-1** queries the DNS server on the **Domain Controller** for the IP address that belongs to "mainframe" when it attempts to `ping` "mainframe.
  - On the backend, the DNS server on the **Domain Controller** hands-off the current A-record for "mainframe" to **Client-1**, and **Client-1** then stores the A-record in its local DNS cache for future queries of "mainframe".
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/42ed73cd-4e29-416c-ad31-2190597bb628" alt="howdnsworks-localcache2"/>
+<img width="1200" src="https://github.com/user-attachments/assets/5b5d4354-36a5-41cb-9385-53101b7b2b33" alt="howdnsworks-localcache2"/>
 </p>
 <p>
 <br />
@@ -585,7 +585,7 @@ Notice how there is no longer an entry for "mainframe" in the local DNS cache:
    - In **DNS Manager**, on the left, navigate to **DNS > dc-1 > Forward Lookup Zones** and click the domain on the DNS server, **mydomain.com**.
    - Then, on the right, right-click anywhere in the blank space and select **New Alias (CNAME)**.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/9d6366a2-a7c2-4a4e-8203-126d76bab0c4" alt="dnsmanagernewaliascname"/>
+<img width="1200" src="https://github.com/user-attachments/assets/e796868f-b367-4e6f-96f1-2a7beb95d7c0" alt="dnsmanagernewaliascname"/>
 </p>
 <p>
 <br />
@@ -594,7 +594,7 @@ Notice how there is no longer an entry for "mainframe" in the local DNS cache:
  - In the **Fully qualified domain name (FQDN)** field, enter `www.google.com`, which is where `search` is going to be mapped to.
  - Then click **OK**.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/290786bf-6781-4418-8281-8860f7618f4b" alt="newresourcerecordaliascname"/>
+<img width="1200" src="https://github.com/user-attachments/assets/72f7b32f-d479-4009-8910-37ddb29a9843" alt="newresourcerecordaliascname"/>
 </p>
 <p>
 <br />
@@ -602,14 +602,14 @@ Notice how there is no longer an entry for "mainframe" in the local DNS cache:
  - Back on **Client-1**, run **PowerShell** as **administrator** and attempt to `ping` "search" with `ping search`.
  - Observe that the output of the command indicates **Client-1** is `pinging wwww.google.com` at the IP address, `142.250.73.132`. 
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/4fcc5e5c-7556-42dd-92ba-3e97da6ab98f" alt="pingsearch2"/>
+<img width="1200" src="https://github.com/user-attachments/assets/0ade1e1d-7871-49ba-8cf2-2027c25a8305" alt="pingsearch2"/>
 </p>
 <p>
 <br />
 
  - When `nslookup search` is executed in **PowerShell**, the **Domain Controller** resolves host, "search", to `www.google.com` at the IP addresses, `2607:f8b0:400a:806::2004` and `142.250.73.100`.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/f53464c1-c874-4ecc-a0c8-66e2286d9b31" alt="nslookupsearch"/>
+<img width="1200" src="https://github.com/user-attachments/assets/091189d9-4acc-415d-ba7e-c94d2266bf29" alt="nslookupsearch"/>
 </p>
 <p>
 <br />
