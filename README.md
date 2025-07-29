@@ -112,7 +112,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
 <p>
 <br />
 
-- On **Client-1**, open **PowerShell** as **administrator** and attempt to `ping` **"mainframe"**.
+- On **Client-1**, open **PowerShell** as **administrator** and attempt to `ping mainframe`.
 - Observe what happens when it fails: a message is returned that reads, `Ping request could not find host mainframe. Please check the name and try again.`
 <img width="1200" src="https://github.com/user-attachments/assets/d4d0070c-c64c-43ed-9f47-c0d465a44e35" alt="client1pingsmainframe1"/>
 </p>
@@ -120,7 +120,7 @@ This tutorial explains how to use Active Directory to gain deeper insight into h
 <br />
 
  - When **Client-1** attempts interact with a hostname of the network, in this case when it attempts to `ping mainframe`, **Client-1** first checks its local DNS cache for `mainframe's` A-record.
-   - This is the fastest method **Client-1** can access an A-record for hostname, `mainframe`.
+   - This is the fastest method that **Client-1** can access an A-record for the hostname, `mainframe`.
  - When **Client-1** doesn't find an A-record for the `mainframe` hostname, it checks its local **host file**.
    - This is the second fastest method **Client-1** can access an A-record for the hostname, `mainframe`. 
  - When **Client-1** fails to find a `mainframe` record in its **host file**, it then checks its **DNS Server**, which, in this case, is the **dc-1 VM**, the **Domain Controller**.
