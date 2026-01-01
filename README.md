@@ -75,8 +75,6 @@ This tutorial explains how to use Active Directory to gain a deeper understandin
 <p>
 <br />
  
-<img width="1628" height="780" alt="howdnsworks-localcache2" src="https://github.com/user-attachments/assets/aab19d5f-2ae7-4318-8188-79f93000c9fd" />
-
   - A **CNAME (Canonical Name) record** is a DNS record that is similar to an A-record.
   - Whereas A-records resolve domain names to IP addresses, **CNAME records** resolve domain names to domain names via aliases.
 <p>
