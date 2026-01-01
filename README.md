@@ -247,7 +247,7 @@ This tutorial explains how to use Active Directory to gain a deeper understandin
  - While the **Domain Controller DNS server** has a current A-record entry for "mainframe" with an IP address of `8.8.8.8`, the DNS cache shows an A-record for "mainframe" with an IP address of `10.0.0.4`.
  - There is a mismatch between the DNS IP addresses for "mainframe" on **Client-1** and the **Domain Controller**.
  - As such, when **Client-1** attempts to `ping` "mainframe" after its A-record has been changed on the **Domain Controller**, **Client-1** receives replies with the old IP address for "mainframe".
-<img width="1200" src="https://github.com/user-attachments/assets/62075199-f64f-41b5-88d5-c310911a7348" alt="howdnsworks-dnscache1"/>
+<img width="1578" height="785" alt="howdnsworks-dnscache1" src="https://github.com/user-attachments/assets/0a47f911-db62-4a44-9845-e18a57a4bede" />
 </p>
 <p>
 <br />
