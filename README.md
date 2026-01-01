@@ -241,12 +241,12 @@ This tutorial explains how to use Active Directory to gain a deeper understandin
 <p>
 <br />
 
- - When **Client-1** attempts to `ping` "mainframe" after the A-record has been changed for "mainframe" on the **Domain Controller DNS server**, **Client-1** first checks its local DNS cache for any A-record entries of "mainframe's" hostname and IP address.
- - In this case, there is an A-record for "mainframe" in **Client-1's** local DNS cache.
- - However, the IP address for "mainframe" in the local DNS cache is a deprecated IP address from before "mainframe's" A-record was changed on the **Domain Controller**.
- - While the **Domain Controller DNS server** has a current A-record entry for "mainframe" with an IP address of `8.8.8.8`, the DNS cache shows an A-record for "mainframe" with an IP address of `10.0.0.4`.
- - There is a mismatch between the DNS IP addresses for "mainframe" on **Client-1** and the **Domain Controller**.
- - As such, when **Client-1** attempts to `ping` "mainframe" after its A-record has been changed on the **Domain Controller**, **Client-1** receives replies with the old IP address for "mainframe".
+ - When **Client-1** attempts to `ping` "mainframe" after the **A-record** has been **changed** for "mainframe" on the **Domain Controller DNS server**, **Client-1** first checks its **local DNS cache** for any **A-record entries** of "mainframe's" **hostname** and **IP address**.
+ - In this case, there is an **A-record** for "mainframe" in **Client-1's** **local DNS cache**.
+ - However, the **IP address** for "mainframe" in the **local DNS cache** is a **deprecated IP address** -- from before "mainframe's" **A-record** was changed on the **Domain Controller**.
+ - While the **Domain Controller DNS server** has a **current A-record entry** for "mainframe" with an **IP address** of `8.8.8.8`, the **DNS cache** shows an **A-record** for "mainframe" with an **IP address** of `10.0.0.4`.
+ - There is a **mismatch** between the **DNS IP addresses** for "mainframe" on **Client-1** and on the **Domain Controller**.
+ - As a result, when **Client-1** attempts to `ping` "mainframe" after its **A-record** has been **changed** on the **Domain Controller**, **Client-1** receives replies with the **old IP address** for "mainframe".
 <img width="1578" height="785" alt="howdnsworks-dnscache1" src="https://github.com/user-attachments/assets/0a47f911-db62-4a44-9845-e18a57a4bede" />
 </p>
 <p>
