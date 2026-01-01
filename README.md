@@ -573,7 +573,7 @@ Notice how there is no longer an entry for "mainframe" in the local DNS cache:
  - Next, **Client-1** queries the DNS server on the **Domain Controller** for the IP address that belongs to "mainframe" when it attempts to `ping` "mainframe.
  - On the backend, the DNS server on the **Domain Controller** hands off the current A-record for "mainframe" to **Client-1**, and **Client-1** then stores the A-record in its local DNS cache for future queries of "mainframe".
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/5b5d4354-36a5-41cb-9385-53101b7b2b33" alt="howdnsworks-localcache2"/>
+<img width="1628" height="780" alt="howdnsworks-localcache2" src="https://github.com/user-attachments/assets/1f628806-8e56-439f-a646-ac301fcf9243" />
 </p>
 <p>
 <br />
