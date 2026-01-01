@@ -70,7 +70,7 @@ This tutorial explains how to use Active Directory to gain a deeper understandin
    - If a client computer contains no A-record in its **local DNS cache**, it resorts to trying to find a given A-record in its **local Host file**, which is stored in long-term memory on its hard drive. This is much less efficient than retrieving it from its **local DNS cache**.
    - If a client computer can't find the A-record in the **local Host File**, it must perform a DNS lookup with its **DNS server**, which is the least efficient way to acquire an A-record.
 <p>
-<img width="1200" src="https://github.com/user-attachments/assets/e9faac68-9545-4ece-b8e3-1bb72ca16684" alt="howdnsworks-localcache2"/>
+<img width="1628" height="780" alt="howdnsworks-localcache2" src="https://github.com/user-attachments/assets/aab19d5f-2ae7-4318-8188-79f93000c9fd" />
 </p>
 <p>
 <br />
